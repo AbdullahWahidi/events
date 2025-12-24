@@ -163,9 +163,10 @@ app.add_handler(CommandHandler("nmonth", nmonth))
 app.add_handler(CommandHandler("lmonth", lmonth))
 app.job_queue.run_daily(
     daily_tday_job,
-    time=time(hour=6, minute=33, tzinfo=timezone.utc),
+    time=time(hour=6, minute=38, tzinfo=timezone.utc),
     name="tday_auto"
     )
     
 app.run_polling()
+
 
