@@ -137,8 +137,8 @@ async def lmonth(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def nmonth(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["time_"] = "month=next"   # <-- set your desired time range
     await data(update, context)               # <-- MUST pass update & context
-chatid= os.getenv("id")
-CHAT_ID = chatid   # your group ID
+    
+CHAT_ID = os.getenv("Chat_id")   # your group ID
 
 async def daily_tday_job(context: ContextTypes.DEFAULT_TYPE):
     await tday(update=None, context=context, chat_id=CHAT_ID)
@@ -168,5 +168,6 @@ app.job_queue.run_daily(
     )
     
 app.run_polling()
+
 
 
