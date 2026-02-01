@@ -92,7 +92,7 @@ async def nweek(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def tday(update=None, context=None, chat_id=None):
     if chat_id:
         # Create temporary user_data
-        temp_context = type("obj", (), {"user_data": {"time_": "day=today"}, "bot": context.bot})
+        temp_context = type("obj", (), {"user_data": {"time_": "day=tomorrow"}, "bot": context.bot})
 
         await data(
             update=type("obj", (), {"message": type("obj", (), {
@@ -163,11 +163,12 @@ app.add_handler(CommandHandler("nmonth", nmonth))
 app.add_handler(CommandHandler("lmonth", lmonth))
 app.job_queue.run_daily(
     daily_tday_job,
-    time=time(hour=0, minute=4, tzinfo=timezone.utc),
+    time=time(hour=6, minute=6, tzinfo=timezone.utc),
     name="tday_auto"
     )
     
 app.run_polling()
+
 
 
 
