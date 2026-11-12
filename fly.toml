@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for events on 2026-11-12T13:16:21Z
+# fly.toml app configuration file generated for events-eea0dg on 2026-11-12T15:31:51Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'events'
-primary_region = 'lax'
+app = 'events-eea0dg'
+primary_region = 'ewr'
 
 [build]
   builder = 'paketobuildpacks/builder:base'
